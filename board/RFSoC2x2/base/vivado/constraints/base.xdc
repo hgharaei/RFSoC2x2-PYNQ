@@ -3,14 +3,14 @@
 
 ############################################################################
 ##
-##   HTG-ZRF4-XUP Rev0.2 - Minimal XDC 07/27/2020
+##   HTG-ZRF4-XUP Rev0.3 - Minimal XDC 09/24/2021
 ##
 ##   This *.xdc file combines the constraints from:
 ##   HTG 2020 design, DC-Eval, Radio ML and uses ZCU111 Master as reference
 ##
 ##   Includes:
-##   Display Port, LEDs, RGBLEDs, push buttons, dip switches, DDR4, PMODs
-##
+##   Display Port, LEDs, RGBLEDs, push buttons, dip switches, DDR4, PMODs, ADC,
+##   DVLPR: HGG
 ############################################################################
 
 ## control
@@ -285,3 +285,9 @@ set_property PACKAGE_PIN AV5  [get_ports {syzygy_std0_tri_io[30]}];  # P2C_CLKN,
 set_property PACKAGE_PIN B9   [get_ports {syzygy_std0_tri_io[31]}];  # C2P_CLKN, Pin 36
 set_property IOSTANDARD LVCMOS18 [get_ports -of_objects [get_iobanks 84]];
 set_property IOSTANDARD LVCMOS18 [get_ports -of_objects [get_iobanks 87]];
+
+## ADC modules
+set_property PACKAGE_PIN AF2 [get_ports "ADC_IN01_226_P "]
+set_property PACKAGE_PIN AF1 [get_ports "ADC_ IN01_226_N"]
+set_property PACKAGE_PIN AB5 [get_ports "ADC_226_REFCLK_P"]
+set_property PACKAGE_PIN AB4 [get_ports "ADC_226_REFCLK_N"]
